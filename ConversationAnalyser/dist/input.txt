@@ -1,0 +1,5 @@
+Emotions: happy,anger,fear,sad,surprise,disgust
+Graph-Max: 1.0
+Graph-Min: 0.0
+Classifier: SVMClassifier
+Classifier-models: /Users/Rhys/NetBeansProjects/ConversationAnalyser/models

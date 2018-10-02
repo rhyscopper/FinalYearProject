@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conversationanalyser.MainPageController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="1270.0">
+               <children>
+                  <BorderPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="671.0" style="-fx-background-color: grey;">
+                     <center>
+                        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <TextArea fx:id="chatText" prefHeight="100.0" prefWidth="100.0" wrapText="true" />
+                           </content>
+                           <BorderPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </BorderPane.margin>
+                        </ScrollPane>
+                     </center>
+                     <left>
+                        <ListView fx:id="participantsList" prefHeight="100.0" prefWidth="167.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </BorderPane>
+                  <AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="599.0">
+                     <children>
+                        <VBox layoutX="-1.0" prefHeight="370.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Pane prefHeight="15.0" prefWidth="600.0" style="-fx-background-color: ;" />
+                              <HBox prefHeight="278.0" prefWidth="600.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Pane prefHeight="256.0" prefWidth="50.0" style="-fx-background-color: grey;" />
+                                    <MediaView fx:id="MediaView" fitWidth="500.0">
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin></MediaView>
+                                    <Pane prefHeight="200.0" prefWidth="50.0" style="-fx-background-color: grey;" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="92.0" prefWidth="600.0" style="-: ;">
+                                 <children>
+                                    <Button layoutX="185.0" layoutY="35.0" mnemonicParsing="false" onAction="#reload" prefHeight="25.0" prefWidth="25.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../buttonImages/RealoadButton.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button layoutX="335.0" layoutY="35.0" mnemonicParsing="false" onAction="#PauseVideo" prefHeight="25.0" prefWidth="25.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../buttonImages/PauseButton.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button fx:id="PlayButton" layoutX="285.0" layoutY="35.0" mnemonicParsing="false" onAction="#PlayVideo" prefHeight="25.0" prefWidth="25.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../buttonImages/PlayButton.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button layoutX="385.0" layoutY="35.0" mnemonicParsing="false" onAction="#FastForward" prefHeight="25.0" prefWidth="25.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../buttonImages/FastForwardButton.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Slider fx:id="VideoSlider" layoutX="56.0" layoutY="8.0" prefHeight="17.0" prefWidth="457.0" />
+                                    <Text fx:id="StartTime" fill="WHITE" layoutX="520.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00/00:00">
+                                       <font>
+                                          <Font name="Arial" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Slider fx:id="VolumeSlider" layoutX="499.0" layoutY="41.0" prefHeight="15.0" prefWidth="93.0" />
+                                    <Text fill="WHITE" layoutX="446.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume:" wrappingWidth="67.68994140625">
+                                       <font>
+                                          <Font name="Arial Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="235.0" layoutY="35.0" mnemonicParsing="false" onAction="#Rewind" prefHeight="25.0" prefWidth="25.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../buttonImages/RewindButton.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Text fill="WHITE" layoutX="12.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Slider fx:id="SpeedSlider" layoutX="65.0" layoutY="39.0" majorTickUnit="0.5" max="2.0" min="0.5" minorTickCount="0" prefHeight="15.0" prefWidth="108.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                                    <Text fill="WHITE" layoutX="12.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed:" wrappingWidth="67.68994140625">
+                                       <font>
+                                          <Font name="Arial Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="250.0" prefWidth="400.0" />
+                  <Pane fx:id="grapharea" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" />
+                  <Pane prefHeight="250.0" prefWidth="400.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

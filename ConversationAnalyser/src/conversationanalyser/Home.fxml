@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conversationanalyser.HomeController">
+   <children>
+      <VBox prefHeight="1104.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="145.0" prefWidth="1280.0" style="-fx-background-color: grey;">
+               <children>
+                  <Pane prefHeight="163.0" prefWidth="1280.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="System for Real-Time Conversation Analysis and Visualisation" textAlignment="CENTER" wrappingWidth="1279.36767578125">
+                     <font>
+                        <Font name="Al Bayan Bold" size="23.0" />
+                     </font>
+                  </Text>
+                  <Pane prefHeight="163.0" prefWidth="1280.0" />
+               </children>
+            </VBox>
+            <HBox prefHeight="335.0" prefWidth="1280.0">
+               <children>
+                  <VBox prefHeight="779.0" prefWidth="642.0">
+                     <children>
+                        <GridPane prefHeight="315.0" prefWidth="620.0">
+                           <children>
+                              <Pane prefHeight="225.0" prefWidth="474.0" style="-fx-border-color: black; -fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField editable="false" layoutX="18.0" layoutY="64.0" maxWidth="385.0" prefHeight="27.0" prefWidth="385.0" fx:id="xmlText" />
+                                    <Button layoutX="180.0" layoutY="104.0" mnemonicParsing="false" text="Browse" fx:id="xmlBtn">
+                                       <effect>
+                                          <Blend mode="MULTIPLY" />
+                                       </effect></Button>
+                                    <Text layoutX="18.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xml:">
+                                       <font>
+                                          <Font name="Al Bayan Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                              <Pane disable="true" maxHeight="50.0" maxWidth="300.0" prefHeight="84.0" prefWidth="271.0" style="-fx-background-color: ;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="xmlError">
+                                 <children>
+                                    <Text fill="RED" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error: extenstion is not correct" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Al Bayan Bold" size="17.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets top="10.0" />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </Pane>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="68.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="416.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children></VBox>
+                  <VBox prefHeight="1104.0" prefWidth="640.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <GridPane prefHeight="315.0" prefWidth="620.0">
+                           <children>
+                              <Pane prefHeight="225.0" prefWidth="474.0" style="-fx-border-color: black; -fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="mediaText" editable="false" layoutX="18.0" layoutY="64.0" maxWidth="385.0" prefHeight="27.0" prefWidth="385.0" />
+                                    <Button fx:id="mediaBtn" layoutX="180.0" layoutY="104.0" mnemonicParsing="false" text="Browse">
+                                       <effect>
+                                          <Blend mode="MULTIPLY" />
+                                       </effect>
+                                    </Button>
+                                    <Text layoutX="18.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Media:">
+                                       <font>
+                                          <Font name="Al Bayan Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="mediaError" disable="true" maxHeight="50.0" maxWidth="300.0" prefHeight="84.0" prefWidth="271.0" style="-fx-background-color: ;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Text fill="RED" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error: extenstion is not correct" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Al Bayan Bold" size="17.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets top="10.0" />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="60.0" />
+                                 </GridPane.margin>
+                              </Pane>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="68.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="416.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children></VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="62.0" prefWidth="1280.0">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="556.0" />
+                  <Pane prefHeight="100.0" prefWidth="191.0">
+                     <children>
+                        <Button fx:id="submit" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Submit" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                     </children>
+                     <effect>
+                        <Blend mode="MULTIPLY" />
+                     </effect>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox prefHeight="62.0" prefWidth="1280.0">
+               <children>
+                  <Pane prefHeight="62.0" prefWidth="362.0" />
+                  <Pane prefHeight="62.0" prefWidth="540.0">
+                     <effect>
+                        <Blend mode="MULTIPLY" />
+                     </effect>
+                     <children>
+                        <Text fx:id="submitError" fill="RED" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="513.0">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
